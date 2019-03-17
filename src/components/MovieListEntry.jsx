@@ -1,9 +1,6 @@
-class MovieListEntry extends React.Component {
-  render() {
-    return (
-      <li id='movieListEntry'>{this.props.movie}</li>
-    )
-  }
-}
+var MovieListEntry = (props) => {
+  return (
+    <div id='movieListEntry'>{props.movie.title}</div>
+  )}
 
 export default MovieListEntry;

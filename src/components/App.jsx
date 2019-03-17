@@ -1,35 +1,36 @@
 import MovieList from './MovieList.js';
-// import Search from '../../compiled/src/components/Search';
-// import Search from './Search.jsx'
+import Search from './Search.js';
+import Movies from './Movies.js'
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      movies: null
+      movies: Movies
     }
 
-    // this.props.handleInputChange = this.handleInputChange.bind(this)
+    this.handleInputChange = this.handleInputChange.bind(this)
+    // this.testFunction = this.testFunction.bind(this);
   }
 
-  // handleInputChange(query) {
-  //   var newMovies = this.props.movies.filter(movie =>
-  //     movie.title.includes(query))
-  //   if (!newMovies.length) {
-  //     newMovies = [{title: 'No movie is found'}]
-  //   }
-  //   this.setState({
-  //     movies:newMovies
-  //   })
-  // }
+  handleInputChange(query) {
+    var newMovies = this.state.movies.filter(movie =>
+      movie.title.includes(query))
+    if (!newMovies.length) {
+      newMovies = [{title: 'No movie is found'}]
+    }
+    this.setState({
+      movies:newMovies
+    })
+  }
 
   render() {
     return (
       <div>
         <h1>Movie List</h1>
-        {/* <Search /> */}
-        <MovieList movies={['Mean Girls', 'Hackers', 'The Grey', 'Sunshine', 'Ex Machina']}/>
+        <Search handleInputChange={this.handleInputChange}/>
+        <MovieList movies={this.state.movies}/>
       </div>
     )
   }

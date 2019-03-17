@@ -3,7 +3,7 @@
 var MovieList = (props) => (
   <ul>
     {props.movies.map(movie =>
-      <MovieListEntry movie={movie} />
+      <MovieListEntry key={movie.title} movie={movie} />
     )}
   </ul>
 )
