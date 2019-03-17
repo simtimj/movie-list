@@ -1,0 +1,10 @@
+var MovieListEntry = props => {
+  return React.createElement(
+    'div',
+    { id: 'movieListEntry' },
+    props.movie.title
+  );
+};
+
+export default MovieListEntry;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9jb21wb25lbnRzL01vdmllTGlzdEVudHJ5LmpzeCJdLCJuYW1lcyI6WyJNb3ZpZUxpc3RFbnRyeSIsInByb3BzIiwibW92aWUiLCJ0aXRsZSJdLCJtYXBwaW5ncyI6IkFBQUEsSUFBSUEsaUJBQWtCQyxLQUFELElBQVc7QUFDOUIsU0FDRTtBQUFBO0FBQUEsTUFBSyxJQUFHLGdCQUFSO0FBQTBCQSxVQUFNQyxLQUFOLENBQVlDO0FBQXRDLEdBREY7QUFFRSxDQUhKOztBQUtBLGVBQWVILGNBQWYiLCJmaWxlIjoiTW92aWVMaXN0RW50cnkuanMiLCJzb3VyY2VzQ29udGVudCI6WyJ2YXIgTW92aWVMaXN0RW50cnkgPSAocHJvcHMpID0+IHtcbiAgcmV0dXJuIChcbiAgICA8ZGl2IGlkPSdtb3ZpZUxpc3RFbnRyeSc+e3Byb3BzLm1vdmllLnRpdGxlfTwvZGl2PlxuICApfVxuXG5leHBvcnQgZGVmYXVsdCBNb3ZpZUxpc3RFbnRyeTsiXX0=
