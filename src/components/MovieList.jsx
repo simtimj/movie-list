@@ -1,11 +1,11 @@
  import MovieListEntry from './MovieListEntry.js'
 
 var MovieList = (props) => (
-  <ul>
-    {props.movies.map(movie =>
-      <MovieListEntry key={movie.title} movie={movie} />
+  <div id="movieListEntry">
+    {props.movies.map((movie, index) =>
+      <MovieListEntry movie={movie} index={index} />
     )}
-  </ul>
+  </div>
 )
 
 export default MovieList;

@@ -11,6 +11,9 @@ class App extends React.Component {
       movies: Movies,
       filtered: Movies,
       submittedFilter: Movies,
+      watched: false,
+      toWatch: Movies,
+      watchedList:[]
     }
 
     this.handleInputChange = this.handleInputChange.bind(this)
@@ -42,21 +45,37 @@ class App extends React.Component {
     })
   }
 
-
-  //Add
-  // 
-  // handleAddInput(movie){
-  //   this.state.movies[movie.title] = movie.title
-  // }
-
   // Submit add input
   setAdd(newMovie) {
-    var newMovieObj = {'title': newMovie}
-    this.state.movies.push(newMovieObj)
-    this.setState({
-      movies: this.state.movies
-    })
+    var titles = [];
+    this.state.movies.map(movie => {
+      titles.push(movie.title);
+    });
+    if (titles.includes(newMovie)) {
+      alert("Movie is already on list");
+    } else {
+      var newMovieObj = {'title': newMovie}
+      this.state.movies.push(newMovieObj)
+      this.setState({
+        movies: this.state.movies
+      })
+    }
   }
+
+  // Toggle watched / to watch
+  toggle() {
+    if (this.state.watched) {
+      this.setState({
+        watched: false
+      })
+    } else {
+      this.setState({
+        watched: true
+      })
+    }
+  }
+
+  // Add toWatch
 
   render() {
     return (

@@ -12,7 +12,6 @@ class Add extends React.Component {
   }
 
   handleAddInput(e) {
-    // console.log(e.target.value);
     this.state.newMovie = e.target.value;
   }
 
