@@ -2,8 +2,8 @@
 
 var MovieList = (props) => (
   <div id="movieListEntry">
-    {props.movies.map((movie, index) =>
-      <MovieListEntry movie={movie} index={index} />
+    {props.movies.map(movie =>
+      <MovieListEntry movie={movie} />
     )}
   </div>
 )

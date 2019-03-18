@@ -54,7 +54,8 @@ class App extends React.Component {
     if (titles.includes(newMovie)) {
       alert("Movie is already on list");
     } else {
-      var newMovieObj = {'title': newMovie}
+      var newId = this.state.movies.length;
+      var newMovieObj = {'id': newId, 'title': newMovie}
       this.state.movies.push(newMovieObj)
       this.setState({
         movies: this.state.movies
@@ -63,17 +64,19 @@ class App extends React.Component {
   }
 
   // Toggle watched / to watch
-  toggle() {
-    if (this.state.watched) {
-      this.setState({
-        watched: false
-      })
-    } else {
-      this.setState({
-        watched: true
-      })
-    }
+  toggleWatchedState() {
+    // if (this.state.watched) {
+    //   this.setState({
+    //     watched: false
+    //   })
+    // } else {
+    //   this.setState({
+    //     watched: true
+    //   })
+    // }
   }
+
+
 
   // Add toWatch
 
@@ -83,7 +86,7 @@ class App extends React.Component {
         <h1>Movie List</h1>
         <Add setAdd={this.setAdd}/>
         <Search handleInputChange={this.handleInputChange} setFilteredSubmit={this.setFilteredSubmit}/>
-        <MovieList movies={this.state.submittedFilter}/>
+        <MovieList movies={this.state.submittedFilter} toggleWatchedState={this.toggleWatchedState}/>
       </div>
     )
   }
@@ -92,9 +95,22 @@ class App extends React.Component {
 export default App;
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 npm install live-server -g          live-server
 npm install -g babel-cli            babel
-
 npm run build     to run babel
 */
